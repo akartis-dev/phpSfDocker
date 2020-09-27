@@ -5,7 +5,7 @@ This repository is a docker-compose template to build symfony project, it use Ng
 # Clone
 Go to project folder and use terminal **git clone https://github.com/sitrak123/phpSfDocker.git**  
 Go to folder after clone, and use **sudo docker-compose up --build** to build docker image  
-Wait and if build is done, go to browser and go to localhost:8080 to see symfony welcome page  
+Wait and if build is done, go to browser and go to localhost:8080 to see symfony welcome page  1
 
 # Installation process if you don't need symfony folder  
 Start bash in php container with **sudo docker exec -it php_uuid bash** and run:  
