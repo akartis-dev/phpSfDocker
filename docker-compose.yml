@@ -5,7 +5,7 @@ services:
             context: .
             dockerfile: docker/nginx/Dockerfile
         volumes:
-            - ./symfony/:/var/www/symfony/
+            - ${SYMFONY_APP_PATH}:/var/www/symfony/
         ports:
             - 8080:80
         networks:
@@ -16,7 +16,7 @@ services:
             context: .
             dockerfile: docker/php/Dockerfile
         volumes:
-            - ./symfony/:/var/www/symfony/
+            - ${SYMFONY_APP_PATH}:/var/www/symfony/
         networks:
             - symfony
         depends_on: 
@@ -32,7 +32,7 @@ services:
             MYSQL_USER: sfUser
             MYSQL_PASSWORD: sfPassword
         volumes: 
-            - ./mysql:/var/lib/mysql
+            - ${MY_SQL}:/var/lib/mysql
         networks:
             - symfony
     
@@ -53,6 +53,6 @@ services:
             - 8082:80
         networks:
             - symfony
-
+            
 networks:
     symfony:
